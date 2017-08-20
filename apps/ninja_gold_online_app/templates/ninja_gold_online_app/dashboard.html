@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <a href="/users/">All Users</a>
+                <a href="/play/">Play</a>
+                <a href="/logout/">Logout</a>
+            </nav>
+            <h2>TOP 5 PLAYERS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in topFive %}
+                        <tr>
+                            <td><a href="/users/{{i.id}}">{{i.name}}</a></td>
+                            <td>{{i.gold}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

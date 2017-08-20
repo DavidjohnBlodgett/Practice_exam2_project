@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>All Users</title>
+    </head>
+    <body>
+        <main>
+            <h1>All Players</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in all_users%}
+                        <tr>
+                            <td><a href="/users/{{i.id}}">{{i.name}}</a></td>
+                            <td>{{i.gold}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/dashboard/">BACK TO DASHBOARD</a>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Play</title>
+    </head>
+    <body>
+        <main>
+            <p>Gold: {{gold}}</p>
+            <section>
+                <form class="" action="/update/" method="post">
+                    {% csrf_token %}
+                    <p>+5 - -5 gold</p>
+                    <button type="submit" name="action" value="cave">CAVE</button>
+                </form>
+                <form class="" action="/update/" method="post">
+                    {% csrf_token %}
+                    <p>+10 - -10 gold</p>
+                    <button type="submit" name="action" value="castle">CASTLE</button>
+                </form>
+                <form class="" action="/update/" method="post">
+                    {% csrf_token %}
+                    <p>+1 - -1 gold</p>
+                    <button type="submit" name="action" value="farm">FARM</button>
+                </form>
+            </section>
+            <section>
+                <h2>Activities</h2>
+                <ul>
+                    {% for i in activities %}
+                        <li>{{i.content}} - {{i.created_at}}</li>
+
+                    {% endfor %}
+                </ul>
+            </section>
+            <a href="/dashboard/">BACK TO DASHBOARD</a>
+        </main>
+    </body>
+</html>
